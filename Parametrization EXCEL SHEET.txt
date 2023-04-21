@@ -1,0 +1,112 @@
+Data Driven Testing or Parametrization
+
+openpyxl ---> we can work with excel files (.xlsx)
+
+File ---> Workbook ---> Sheets ---> Rows ---> Cells
+
+1) Read Data from excel  
+2) How to write data into excel
+
+3) Data driven test case 
+
+
+data = sheet.cell(r,c).value  ----> To read the data
+sheet.cell(r,c).value = "Welcome"  ----> To write the data 
+
+
+
+---------------
+Python Packages: 
+
+1) xlrd: -----> This package is for retrieving the data and formatting the data in Excel files(.xls or .xlsx)
+2) xlwt: -----> This package is for writing the data and formatting the information in Excel files(.xls or .xlsx)
+3) xlutils: ---> This package provides a collection of utilities for working with Excel files. 
+Since these utilities may require either or both of the xlrd and xlwt packages, they are collected together here, separate from either package
+
+
+
+-------------------------------------------------------------
+				EXCEPTION HANDLING
+-------------------------------------------------------------
+
+An exception is an event which occurs during the execution of a program, that disrupts the normal flow of the program’s instructions,  
+or in simple words, any issue which makes your test case stop in between the execution.
+
+Even if a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it. 
+Errors detected during execution are called exceptions and are not unconditionally fatal. Most exceptions are not handled by programs.
+
+Using TRY & Except Block 
+
+print("Program is started")
+
+try:
+    print(50/0)
+except ZeroDivisionError:   # Will be executed only when the error is thrown 
+    print("Entered into except block ")
+
+print("Program completed")
+
+
+
+-----------
+Multiple Except Block
+
+try:
+    print(50/0)
+except TypeError:   # Will be executed only when the error is thrown
+    print("Entered into except block - Handle TypeError ")
+except ZeroDivisionError:   # Will be executed only when the error is thrown
+    print("Entered into except block - Handle ZeroDivisionError ")
+
+print("Program completed")
+
+
+--------------------
+Try - Else Block  
+
+case 1--- > Thrown Exception ------> Except block will execute
+
+case 2 ---> Not thrown Exception ----> Else Block will execute  
+
+
+try:
+    print(50/5)
+except TypeError:   # Will be executed only when the error is thrown
+    print("Entered into except block - Handle TypeError ")
+except ZeroDivisionError:   # Will be executed only when the error is thrown
+    print("Entered into except block - Handle ZeroDivisionError ")
+else:
+    print("Entered into Else - Block")
+print("Program completed")
+
+
+---------------------
+Finally Block -----------------> It will execute everytime whether exception is there or not 
+***************if finally block is there then else will not execute*******************************
+
+
+try:
+    print(50/5)
+except TypeError:   # Will be executed only when the error is thrown
+    print("Entered into except block - Handle TypeError ")
+except ZeroDivisionError:   # Will be executed only when the error is thrown
+    print("Entered into except block - Handle ZeroDivisionError ")
+else:
+    print("Entered into Else - Block")
+finally:
+    print("This is finally block")
+print("Program completed")
+
+
+
+
+
+
+
+
+
+
+
+
+
+				

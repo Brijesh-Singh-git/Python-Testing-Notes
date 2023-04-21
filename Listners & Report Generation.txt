@@ -1,0 +1,45 @@
+What are Listeners?
+Listeners are functions that wait for an event/results to occur and capture the action of an event.
+
+The listeners can capture both webdriver actions and unit test results.
+
+Listeners for webdriver actions are handled by Event Listeners.
+Listeners for test results are handled by Unit TestResult Listeners.
+
+
+------------------------
+Event listeners:
+Event listeners are functions in selenium python bindings that wait for an event to occur; 
+that event may be a user clicking or finding, changing the value, or an Exception. The listeners are programmed to react to an input or signal.
+
+There is a function to react when an even is about to happen; also, there is a function to react after the event.
+
+AbstractEventListener provides pre and the post event listeners, so to use these listeners, 
+we have to implement those listeners by inheriting AbstractEventListener.
+
+
+-------------------------
+EventFiringWebDriver:
+EventFiringWebDriver is a wrapper on the webdriver which provides all the methods that the webdriver provides. 
+EventFiringWebDriver provides two more functions to register and unregister the listeners implementing the class.  
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------
+				HTML REPORTS
+-------------------------------------------------------
+
+Reports 
+Reporting plays an important role in test automation. It is equally important to incorporate report generation as a part of test automation. 
+More on reporting and report generation can be understood from the upcoming video resource.
+
+Always run the command in Terminal as python filename 
+
+
+

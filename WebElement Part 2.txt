@@ -1,0 +1,152 @@
+----------------------------------------------------
+				WEB TABLES
+----------------------------------------------------	
+
+1) Static web table ---> Data is static i.e. whenever we see table the data is always same 
+2) Dynamic web table ----> Data gets keep changing whenever we see the table 
+
+
+--------------------
+STATIC WEB TABLE 
+--------------------
+
+		
+----------------------------------------------------
+			  WINDOW HANDLES
+----------------------------------------------------
+While working on any application, it is highly possible that we open a large number of windows.
+
+Each window may require us to perform some actions for completing an end-to-end flow. For this, we should be able to switch between them.
+
+We need to switch over the control also and then do the required operation, because, by default, the focus remains on the parent window as we have seen in the previous page.
+
+WebDriver supports moving between these windows using the “switch_to_window()” method.	
+
+	  
+			  
+----------------------------------------------------
+			   ALERTS & POPUPS
+----------------------------------------------------		
+
+
+Alerts interrupt the current window and force the browser to read the message which means the driver will not be able to perform any actions without handling the alerts.
+
+Properties of Alerts with respect to Selenium Python
+
+1) We cannot identify alerts using inspect tools
+2) We cannot write xpaths for alerts
+3) It is not a window
+4) We cannot handle alerts using javaScript Executor.
+
+---> alert_handle = driver.switch_to_alert()
+
+1) Accept --->alert_handle.accept()
+2) Dismiss ---> alert_handle.dismiss()
+3) Pop up Text ---> alert_handle.text
+4) Send Keys --> alert_handle.sendKeys("<<text>>"
+
+
+-----------------------
+Authentication POPUPS
+-----------------------
+
+We need to bypass the id and password in the URL to complete the authentication
+
+URL ---> https://the-internet.herokuapp.com/basic_auth
+
+syntax = https://username:password@test.com 
+
+
+example --->  https://admin:admin@the-internet.herokuapp.com/basic_auth
+
+
+
+
+
+----------------------------------------------------
+			  FRAMES/ iFRAMES ---> frame, iframe, form 
+----------------------------------------------------	
+
+switch_to_frame() ---> Selenium#3
+
+
+#Selenium#4
+1) switch_to.frame(Name of the frame)
+2) switch_to.frame(ID of the frame)
+3) switch_to.frame(Webelement)
+4) switch_to.frame(0)
+
+DRIVER cannot switch from frame to frame ----> like once the driver is on main page then go to frame and once oepration is done again go back to the default page then move on to next frame
+
+driver.switch_to.default_content() ---> This will go back to the main page
+
+
+
+--------------------
+Inner FRAMES --------> Frame within another frame 
+
+driver.switch_to.parent_frame()     #directly it will switch to the parent frame in SELENIUM 4
+
+
+
+
+----------------------------------------------------
+			  MOUSE OPERATIONS ---> ACTION CLASS
+----------------------------------------------------	
+
+ACTIONCHAINS ---> This package we need to import 
+
+1) Mouse hover  ----- > move_to_element(element) 
+2) Right Click ----> context_click(element)
+3) Double Click  ----> double_click(element) 
+4) Drag & Drop   -----> drag_and_drop(source,target) 
+
+
+for SLIDERS OPERATIONS  -----> drag_and_drop_by_offset(source, x-axis,y-axis) 
+
+example    --- >  act.drag_and_drop_by_offset(min_slider, 102,0).perform()
+				  act.drag_and_drop_by_offset(max_slider, -120,0).perform()
+
+
+
+
+
+
+----------------------------------------------------
+			  SCROLLING OF WEBPAGE
+----------------------------------------------------	 
+
+
+# Approach 1
+
+# driver.execute_script("window.scrollBy(0,2500)", "")
+# value = driver.execute_script("return window.pageYOffset;")
+# print("No of Pixels moves: ", value)
+
+
+# Approach 2 ---> Based on Element
+
+# flag = driver.find_element_by_xpath("//img[@alt='Flag of India']")
+# driver.execute_script("arguments[0].scrollIntoView();",flag)
+# value = driver.execute_script("return window.pageYOffset;")
+# print("No of Pixels moves: ", value)
+
+# Approach 3 -----> Scroll till the end of the page
+
+driver.execute_script("window.scrollBy(0,document.body.scrollHeight)")
+
+
+# Approach 4 -----> Scroll up  to the page
+time.sleep(3)
+driver.execute_script("wind
+
+
+
+
+
+
+
+
+
+
+  

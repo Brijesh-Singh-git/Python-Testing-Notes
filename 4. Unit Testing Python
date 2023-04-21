@@ -1,0 +1,164 @@
+Unit testing  
+
+In python we use PyUnit Testing framework to organize our automation code an extract reports
+
+1) Unit testing verifies that individual units of code (functions) work independently as expected. 
+2) A unit test is a piece of code written that executes a specific functionality in the code to be tested and asserts a certain behavior.
+3) The percentage of code which is tested by unit tests is called test coverage.
+
+ Unit testing is the practice of writing code to test the code and then run those tests in an automated fashion.
+
+-----------
+Frameworks for Unit Testing:  --------------> unittest or PyUnit 
+
+
+
+-------------------------------
+Advantages of Unit Testing : 
+
+	
+1) Unit tests are repeatable
+The good thing about unit tests is that they are repeatable. we write them once and run them every time we change our code.
+ With this approach, we can test all the execution paths in a function.
+ 
+2) Unit tests help us refactor the code
+Refactoring means changing the structure of the code without changing its behavior. If we extract a few lines of a method into a separate private method, that’s refactoring.
+If you rename a method, that’s refactoring too.
+we’re changing the structure of the code to make it cleaner and more maintainable, but we're not changing the functionality.
+When we don’t perform a unit test, every time the code is refactored, we have to manually test every part of the application that could be affected by refactoring.
+As the application grows, through unit tests, we can make sure that we didn’t accidentally break anything that used to work previously.
+With unit tests, you make sure that every function works with different inputs under varying circumstances.
+Precisely, unit tests help us write better code.
+	
+	
+	
+	
+------------------------------------------------
+		TEST FIXTURES in UNIT TESTING 
+------------------------------------------------
+
+ORDER OF EXECUTION -------------->>>> setUpModule() ---> setUpClass() -->setUp() --->tearDown() -->tearDownClass()-->tearDownModule()
+
+
+
+1) setUp() ----> This is called immediately before calling any of the test methods.
+2) tearDown() --->This is called immediately after compelting any of the test methods.
+3) setUpClass()----> A class method called before all the tests in an individual class have to run.
+4) tearDownClass()---> A class method called after all the tests in an individual class has run. 
+
+Module in python: In simple words, module is a file consisting of Python code with .py extension. 
+It can contain functions, classes, and variables. Additionally, it can have plain runnable code as well. 
+
+5) setUpModule() -----> A method called before the execution of any component of a module.
+6) tearDownModule()----> A method called after the execution of all the components of a module.
+
+		
+
+
+------------------------------------------------
+		ASSERTIONS in UNIT TESTING 
+------------------------------------------------
+
+The first two asserEqual & assertNotEqual are used to check when we have only two values.
+1) asserEqual ---> It compares the first parameter with the second parameter, if both matches, the unitTest will continue with the remaining execution 
+				   but if both the values are different then unit test fails the testcases.
+
+2) assertNotEqual ---> If both the paramter are NOT EQUAL then the unit test passes, if both the parameter are EQUAL then the unit test will fail.
+
+
+
+When values are more than two we use assertTrue & assertFalse
+3) assertTrue ---> Checks whether the given paramter is true or not ---> If value is  true it will pass unittest
+4) assertFalse ---> If the value is false then the unittest is passed , but if value is true it will fail the unit test.				   
+
+
+
+
+5) assertIsNotNone --- > This method verifies whether the given value results in not NONE, if the result is not none then python unittest will pass the test case.
+					 otherwise it will fail the test case when the result is NONE			
+					 
+6) assertIsNone --- > This method verifies whether the given value results in NONE or not, if the result is none then python unittest will pass the test case.
+					 otherwise it will fail the test case					  
+
+
+
+The below two methods will be helpful when you want to verify presence of a value in a LIST, TUPLE, SET & DICTIONARY
+
+7)	assertIn -----> This method verifies whether the first element is present in the second element, if thr first element is present in second element then test case is passed.
+8)  assertNotIn ---->	This method verifies whether the first element is NOT present in the second element or not, if thr first element is present in second element then test case will be failed.		 
+			
+			
+-----------
+RELATIONAL COMPARISON 	 
+
+1) assertGreater ----> verifies first value is greater than second value or not
+2) assertGreaterEqual ---->verifies whether first parameter is greater or equal to the second parameter
+3) assertLess --->verifies first value is less than second value or not
+4) assertLessEqual ---> verifies whether first parameter is lesser or equal to the second parameter
+
+
+
+
+------------------------------------------------
+		SKIPPING TESTS in UNIT TESTING 
+------------------------------------------------
+
+Why does a test method/ test class need to be skipped?
+
+
+Q. Any groundwork that has not been set up properly will lead to a failure of all the subsequent test methods.
+
+Say, a setUp() method with a variable has to be initialized before being used in other test methods. 
+Assume that the initialization has not happened with no error indicating the same. 
+Now any test method trying to use the variable will result in a failure. 
+In order to avoid inappropriate test failures, we can take the benefits of skip test.
+
+Q. On what basis a test method can be skipped?
+
+How it would be if you can skip the test execution based on a condition(s)? 
+
+Some valid logical conditions to be checked before the execution of every test method. 
+The result of the condition decides whether the method to be executed or skipped.
+
+unittest provides the following set of decorators for skipping the tests.
+
+
+1)  @unittest.SkipTest ---------->  # Decorator for skipping the particular test method
+
+2) @unittest.skip("I am skipping this test method 4")  ----> Another way of skipping test with the reason 
+
+3) @unittest.skipIf(1==5, "Skipping the method 3 as 1==1") -----> # now it wont skipp as 1==5 ....change 1==1 and it will skip this test case
+
+
+
+
+
+------------------------------------------------
+		TEST SUITES in PYTHON
+------------------------------------------------
+
+Test Suite
+
+1) The TestLoader class is used to create test suites from classes and modules. 
+There is no need to create an instance of this class; the unittest module provides an instance that can be shared as unittest.defaultTestLoader.
+
+2) unittest.TestLoader().loadTestsFromTestcase("<name of the class>") - loads all the test methods from the class specified and creates a suite of all tests cases contained in the TestCase derived from testCaseClass.
+unittest.
+
+3) TestSuite("<List of TestCase>") - Callable object that constructs a test suite from a list of tests. No methods on the resulting object are needed. 
+The default value is the TestSuite class.
+
+4) TextTestRunner() - A basic test runner implementation which prints results on standard error. 
+It has a few configurable parameters, but is essentially very simple. 
+
+5) Verbosity - one of the configurable property which takes an integer value from 0 to 2, higher the value, higher the level of details.
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,170 @@
+Python Supports both Structured and Object Oriented style of programming.
+
+Advantages of Python:- 
+
+1) It has wide range of libraries and built-in-functions which helps in rapid development.
+2) Easy to understand 
+3) high level lagugae
+4) Open source 
+5) Python is a cross platform compatible 
+6) Python is a dynamically typed language!
+
+
+
+
+------------------------------ Modules comments and PIP--------------------------
+
+Modules:- A module is file containing  code written by someoneelse which can be imported and used in pur programs.
+
+PIP:- Pip is a packagae manager for python that is used to install module on our system
+
+
+Types of Modules:- 1) Built in Modules :- Pre Installed in python
+				   2) External Modules :- Need to install using pip eg- flask, tenserflow
+
+
+
+
+------------------------------ Identifiers and Keywords in Python --------------------------
+
+Identifiers ---->  In Python, variables, functions, classes, modules and objects are identified using a name known as an identifier. 
+				   An identifier can start with an uppercase or lowercase character or an underscore (_) followed by any number of underscores, 
+				   letters and digits. All identifiers in Python are case sensitive.
+Example: weight=10
+
+In the above example, weight is an identifier.
+
+
+Keywords ----> Keywords are the reserved words in Python. So keywords cannot be used as identifiers or to name variables and functions. 
+			   Few of the keywords are listed below.
+
+Example: if, else, elif, for, where, break, continue
+
+--------------------
+Python is a dynamically typed language!  
+
+weight=10 
+
+In the above example, no datatype was mentioned at the time of declaring variable. 
+In Python, the datatype of a variable is decided automatically at the time of execution based on the value assigned to it. This is called as dynamic typing.
+
+Example:
+
+num=65
+print(num,type(num))
+num="A"
+print(num,type(num)) 
+
+OUTPUT:- 65 <class 'int'>
+		 A <class 'str'>
+		 
+
+--------------------------------------------------------------------------------------------------
+
+The input() function:----> 
+
+Python provides the input() built-in function to read an input from the user using the standard input device (i.e. keyboard). 
+The input() function always returns "string" data irrespective of the type of data entered through the keyboard.
+
+SYNTAX:-  var_name = input([“interactive statement”])
+
+where,
+
+var_name is the variable assigned with the string value which is read using input method.
+
+Example: - input_var=input("please enter the value")
+           print(input_var)
+
+
+
+The print() function: ------>   print() built-in function to display the output
+
+Syntax: print(“var_name1, var_name2, …”, [end=”value1”, sep=”value2”])
+
+where,
+
+var_name1, var_name2 are the variable names or the literals you want to print or output
+
+end is used to specify the separator between two print statements which is ‘\n’ by default
+
+sep is used to specify the separator between multiple variables displayed using a single print statement
+
+
+
+-------------------------
+Type conversion in Python
+
+Python does not support implicit type conversion and it will throw an error.
+
+we have to explicitly convert the datatype of one variable into the required datatype to complete the operation. This is known as explicit type conversion.
+
+
+Example:
+
+num1=10
+num2="20"
+result=num1+int(num2)
+print(result)
+
+Output:
+
+30
+
+
+
+
+----------------------------------Control Structures in Python-------------------------------------
+
+Control Structures are used to control the flow of execution in a Python program. 
+Sometimes, it is required to skip execution of few statements based on the logic and in some cases,
+
+Types:- 
+
+1) Sequential ---> Control flows through all the statements in order in which it is written. i.e (TOP to BOTTOM)
+2) Selection ----> Based o some conditions, control flows to different set of statement.
+3) Iteration ----> Certain statements will be executed repeadetly.
+
+--------------------------
+Selection Statement 
+a) (IF Statement) 
+
+a=10
+if(a>0):
+     print("positive integer")
+positive integer
+
+b)  (IF-ELSE Statement) 
+
+a=-10
+if(a>0):
+	print("positive integer")
+else:
+	print("Not a positive integer")
+
+
+c) (ELSE-IF Ladder) 
+
+a=0
+if(a>0):
+    print("positive integer")
+elif(a<0):   ----------------------->  elif keyword is used in python
+    print("negative integer")
+else:
+    print("it’s zero")
+
+
+d) (WHILE loop) 
+
+num=5
+count=1
+while count <= num:
+    print("the current number is:",count)
+    count+=1
+
+
+
+
+
+
+
+

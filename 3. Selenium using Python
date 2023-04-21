@@ -1,0 +1,326 @@
+Selenium Suite components
+-------------------------------
+1) Selenium IDE
+2) Selenium RC
+3) Selenium webdriver
+4) Selenium Grid
+
+
+Selenium IDE
+
+IDE (Integrated Development Environment) is a Firefox plugin. It allows us to record and playback the scripts.
+
+Selenium WebDriver
+
+Selenium WebDriver is a browser automation API that accepts commands and sends them to a browser.
+It is implemented through a browser-specific driver.
+It directly communicates with the browser and controls it.
+Selenium WebDriver supports various programming languages like Java, C#, PHP, Python, Perl, Ruby and Javascript
+
+
+Selenium Grid
+
+Selenium Grid is used to run tests on different machines against different browsers in parallel. 
+This means running multiple tests at the same time on different machines with different browsers and operating systems.
+
+
+Selenium RC
+
+Selenium RC, also known as Selenium 1, was the main Selenium project for a long time before WebDriver was  introduced in the market. 
+It mainly relies on JavaScript for automation. 
+
+
+
+---------------------------------------------
+Selenium WebDriver architecture
+
+1) Selenium WebDriver API is a collection of abstract methods which helps in communication between languages and browsers.
+2) Each and every browser has different logic of performing actions on the browser.
+
+
+
+It comprises four main components which are:
+
+1. Selenium Client Libraries/Language Bindings
+
+Selenium supports multiple libraries such as Java, Ruby and Python . Selenium developers have developed language bindings to allow Selenium to support multiple languages. 
+
+2. JSON WIRE Protocol Over HTTP Client
+
+JSON stands for JavaScript Object Notation. It is used to transfer data between a server and a client on the web. JSON Wire Protocol is a REST API that transfers the information between HTTP server and the client. Each BrowserDriver (such as FirefoxDriver, ChromeDriver, etc.) has its own HTTP server.
+
+3. Browser Drivers
+
+Each browser contains a separate browser driver. Browser drivers communicate with the respective browsers without revealing the internal logic of the browser’s functionality. When a browser driver has received any command , that command will be executed on the respective browser and the response will be returned in the form of an HTTP response.
+
+4. Browsers
+
+Selenium supports multiple browsers such as Firefox, Chrome, IE and Safari.
+
+----------------
+WebDriver has equivalent methods to perform the above actions through code. Below is the list of frequently used browser method 
+
+#open the google scholar application
+browser.get("https://scholar.google.com/");
+
+#maximizes the window
+browser.maximize_window();
+
+#refreshes the window
+browser.refresh();
+
+#close the browser
+browser.quit();
+
+
+print(browser.title)
+
+print(browser.current_url)
+
+#takes screenshot of the current window
+browser.get_screenshot_as_file("image1.png")
+
+#refreshes the window
+browser.refresh();
+
+
+---------------------------------------------------------
+Introduction to WebElements
+
+Find & Act| Web Elements.
+Selenium WebDriver API has a list of methods which would help us in finding an element and performing actions on the same.
+
+The methods are
+
+1) find_element(Locator, value) ----> It will return the first web element
+2) find_elements(Locator, value) ---> It will return a list of all  the web element
+
+Locators are used for locating an element on a web page. Locator is defined as an address that uniquely  identifies a WebElement within a web page.  
+
+
+--------------
+Locator
+
+Every element in HTML is formed by the combination of tags and attributes. 
+Tags are special keywords used to add an element to a webpage. 
+Attributes are used for providing additional data to an element. 
+
+Here in Selenium, we use locators to identify any element.
+
+Locators may be either one of the following
+
+1) Attributes
+2) Tag names
+3) The styling options added to an element
+4) The location of the elements in a page
+
+Selenium offers 8 types of locators as follows, which help in uniquely identifying an element in a web page.
+
+----> ID, NAME , CLASS, LINK TEXT, PARTIAL LINK, TAG NAME, CSS SELECTOR, XPATH
+
+
+
+---> ID, NAME, LINK-TEXT, PARTIAL-LINK-TEXT [ Used to find or locate single elements] 
+
+---> CLASS_NAME, TAGNAME [USed to locate or find multiple elements] 
+
+---> X-PATH & CSS-SELECTOR [ ARe the customized selector as we have to generate by our own according to the locator ]
+
+
+
+-------------------------------------------------------
+					LINK Text
+-------------------------------------------------------
+
+<input id="hello" name="dasa" > Name: </input>   ---------------->> Name: here is called INNER TEXT 
+
+<a href= "bhfdbsjf"> Register </a> --------->> Register here is a LINK TEXT and PARTIAL LINK TEXT is half of "REGI"
+
+
+-------------------------------------------------------
+					CSS selector
+-------------------------------------------------------
+Cascading Style Sheets, known as CSS, is a style sheet language used to define the appearance and formatting of HTML.
+CSS is a useful format for identifying elements on a webpage for testing.
+If the elements you are trying to work with do not have unique id or class attributes associated with them, CSS selector is the savior.
+The combination of an element's tag and other available attributes and their values are known as CSS selector.
+
+The different combinations that can be created are 
+
+Tag and ID. -----> tagname#valueofId [here tag name is option] therefore ---> input#email & #email  both are same
+Tag and Class.----> tagname.valueOfClass
+Tag and Attribute. ----> tagname[attribute=value] -------------> input[data-testid=royal_email]
+Tag, Class, and Attribute. -----> tagname.valueOfClass[attribute=value] ----------------->
+Tag, ID, and Attribute.
+
+
+
+-------------------------------------------------------
+                      X-PATH
+-------------------------------------------------------
+
+Xpath (XML Path Language)
+It is a syntax or language for finding any element on the web-page using XML path expressions
+X-path is used to find the location of any element on a webpage using HTML DOM structure
+X-PATH can be used to navigate through elements and attributes in DOM 
+X-path is an addresss of the element
+
+It allows to select nodes or compute values from an XML or HTML document.
+Web pages are developed using a text-based markup language-HTML. When web browsers receive HTML documents, they render them into multimedia web pages. 
+With XPath, we can extract data not only based on the page structure but also based on web elements and their contents.
+
+XPath handles any XML/HTML document as a tree.
+
+
+
+There are many node types in an XPath tree:
+
+Element node: represents an HTML element, an HTML tag.
+Attribute node: represents an attribute of an element node, e.g. “href” attribute in <a href=#>example</a>.
+Comment node: represents comments in the document (<!-- … -->).
+Text node: represents the text enclosed in an element node (example in <p>example</p>).
+
+
+
+------------
+Absolute X-PATH ------------->  /html/body/div/div[1]/div/div[1]/div/div[1]/img -------->ABSOLUTE X-PATH IS UNSTABLE always prefer RELATIVE X-PATH
+
+Realtive X-PATH -------------> //*[@id="app"]/div[1]/div/div[1]/div/div[1]/img
+
+
+----------------------------
+DIffernce betwwen Absolute & Relative X-PATH:- 
+
+1) Absolute X-path starts from the root of the element
+   Relative X-PATH directly jumps to the element of the DOM 
+   
+2) Absolute X-path always start with single '/' 
+   Relative X-PATH start with //
+   
+3) In absolute X-PATH we use only Tags & Attribute
+   In relative X-path we use attribute only 
+   
+----------------------------
+How to write Relative X-Path Manually ? 
+
+//tagname[@attribute='value']   ----------> //input[@name='username']
+	* is used to jump to that tagname directly	---------->	//*[@name='username']   
+
+
+-------------------------
+How to Capture  X-Path Manually ?  
+
+1) Firebug, firepath -----> firefox ----> depricated / not available
+2) Selectors Hub ---------> 
+
+
+----------------------------
+Reason to prefer Relative X-PATH:- 
+
+1) If developer introduced new element then absolute xpath will be broken
+2) If developer changed the location then absolute xpath will be broken 
+	                 ABSOLUTE X-PATH IS UNSTABLE
+	
+------------------------------
+X-Path Options:- 
+1) and 
+2) or
+3) contains()
+4) starts-with()
+5) text() 
+
+
+READ X-PATH AXES NOTES on GOOGLE 
+
+
+
+
+
+
+-------------------------------------------------------
+                      COMMANDS IN SELENIUM
+-------------------------------------------------------
+
+1) application Command
+2) conditional Command
+3) browser Command
+4) navigational COmmand 
+5) wait Command 
+
+
+-------------------
+Application Command  --------------> title, current_url, page_source
+
+1) get() ----> opening the application URL
+2) title -----> to capture the current title of the page 
+3) current_url ---> To capture the current url of the page
+4) page_source ---> to capture the source code of the page
+
+
+Conditional COmmands -------------> 
+
+1) is_displayed()
+2) is_enabled()
+3) is_selected() 
+
+Browser COmmands ------>
+
+1) close() -----> It will close the tab opened in the beginning i.e the parent tabs will be close (CLose single bowser window)
+2) quit() ------> It will close all the tabs and close the browser also 
+
+
+
+Navigational COmmand ----->
+
+1) back()
+2) forward()
+3) refresh() 
+
+
+Wait Commands ------------>
+
+Synchronisation ----> When a page is loaded by the browser, the elements which we want to interact with may load at different time intervals.
+With this, it is not only difficult to identify the element but also to locate the element, it will throw an “ElementNotVisibleException” exception. 
+
+"ElementNotInteractableException" is caused when an element is found, but you cannot interact with it.
+
+time.sleep(time) -----> 1) If used then the performance of the script will be reduced 
+						2) If the element is not available within the time mentioned, still there is a chance of getting exception. 
+						
+
+1) Implicit Wait -----> (We specify the time here) 
+	
+	Advantages:- 
+		1) Single Statement
+		2) Performance will not be reduced(If the element is available within the time it proceed to execute furhter statements)
+		
+	Dis-Advantages:-
+		1) If the element is not available within the time mentioned, still there is a chance of getting exception 
+		
+		
+		
+2) Explicit Wait ------> (Works based on condition) 
+
+	a) An explicit wait is a simple step that you define that waits for a certain condition to occur before proceeding further in the code.
+	b) 
+	
+	
+	
+
+
+
+-------------------------------------------------------
+                      CHECKBOXES in SELENIUM
+------------------------------------------------------- 
+
+Watch SELENIUM 7 video on yt 
+
+
+
+Links
+---------------
+1) Internal ----> 
+2) External
+3) Broken Link 
+
+
