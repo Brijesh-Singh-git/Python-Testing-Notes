@@ -1,0 +1,54 @@
+Introduction to Robot framework
+
+It is open source automation framework. It is mainly used in test automation and robotic process automation. 
+
+Robot Framework is a generic test automation framework for acceptance Testing 
+
+
+
+Why Robot Framework?
+-It is an open source framework for Acceptance testing and Acceptance test driven development(ATDD)
+
+-It is extensible and can be integrated with other tools to create automation solutions
+
+-It has easy syntax and uses human readable keywords
+
+-It has modular architecture and libraries helps in extending the capabilities
+
+-It is application and operating system independent
+
+-It is implemented in Python and runs on Jython and Iron Python
+
+-It has a clear structure with data defined in files
+
+
+
+Features of Robot framework
+
+1. Testcases can be represented in tabular format. It is written using keywords. Thus, making it easy to understand and write testcases.
+
+2. Keywords: Framework comes with in- built keywords or library specific keywords. User defined keywords also can be created. 
+Arguments can be passed to any of these keywords. So, keyword would act like functions and can be reused.
+
+3. Variables: Variables like scalar, list and dictionary are supported in the framework. It helps in simplifying the complex test cases.
+
+
+
+
+
+
+-----------------------------------------
+
+Every robot file contains 4 section -----------> SETTINGS, VARIABLES, TEST CASES, KEYWORDS 
+
+
+
+
+
+
+
+
+
+
+
+

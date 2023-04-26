@@ -1,0 +1,79 @@
+Page Objects
+
+A page object represents an area in the web application user interface that your test is interacting.
+
+Benefits of using page object pattern:
+
+Creating reusable code that can be shared across multiple test cases
+Reducing the amount of duplicated code
+If the user interface changes, the fix needs changes in only one place
+Reduce development time
+
+
+Why POM?
+
+Over time the amount of test scripts involved in the test repository will increase. Maintaining huge test scripts of selenium become tedious when the web element attributes gets updated in the AUT.  
+In a similar manner, a lot of preconditions which needs to be met before performing an action will lead to duplication of code in the test scripts.
+
+e.g. Before you can perform the check on the Account balance for your account number, you have to successfully login to the application. 
+Hence the code to login to the application will get repeated every time you have to interact with the application.
+
+POM offers the following advantages compared to the traditional way of writing the test scripts.
+
+The Object repository ensures that the attribute value has to be changed only in the page class, for the change to be reflected in all the test scripts.
+
+Clear separation between the attribute values, interactions and verification.
+
+Code becomes less and optimized because of the reusable page methods in the POM classes.
+
+Methods get more realistic names which can be easily mapped with the operations happening in the GUI.  
+E.g:  if after clicking on a button we navigate to the home page, the method name will be like 'gotoHomePage()'.
+
+
+--------------------------------------------------------
+				LOGGING & LOG-LEVELS
+--------------------------------------------------------
+
+Logging is a very useful tool in a programmers toolbox. It can help you develop a better understanding of the flow of a program and discover scenarios that
+you might not even have thought of while developing
+
+-----------
+Log Levels
+
+1) DEBUG 
+2) INFO
+3) WARNING
+4) ERROR
+5) CRITICAL
+
+
+
+--------------------------------------------------------
+				ALLURE Reports Generation
+--------------------------------------------------------
+
+Allure is a py.test plugin that prepares the data from your code and generates a report with it
+Allure is an opensource framework designed to create test execution reports
+During test excecution a small library called adapter attached to the testing framework saves information about executed tests to xml/json files
+During report generation the XML files are transformed to a HTML report
+
+
+
+
+
+
+--------------------------------------------------------
+				CONNECTION with DATABASE ----MySQL
+--------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
