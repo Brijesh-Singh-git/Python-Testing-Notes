@@ -1,0 +1,49 @@
+-Python lists are containers to store a set of values of any data types.
+
+ 
+---------------------------
+		LISTS 
+---------------------------
+
+# Lists in python are created using []
+a = [1,2,3,40,5,6,89]
+
+# Access using index using a[0],a[2],a[5]
+print(a[0])
+print(a[3])
+print(a[6])
+
+# Change the value of list using
+a[2]="Hello"
+print(a)
+
+
+# We can create a list with items of different types
+c= ["Brijesh", True ,6.8 , 12 ]
+print(c)
+
+
+----LISTS METHODS----
+
+
+-a.sort()  # It will sort the list in ascending order
+-a.reverse()  # It will sort the list in reverse order
+-a.append(34) # It will add at the end of the list
+-a.insert(5,67) # It will insert 67 at 5th index
+-a.remove(67) # It will remove the element 67 from the lists
+-a.pop(0) # It will remove the element at index 0 as specified
+
+		
+
+------------------------------------------------------------
+					TUPLES
+------------------------------------------------------------		
+
+- A Tuple is an immutable data type in python ( We cannot change or update the values in Tuples) 
+
+
+
+
+
+			
+
